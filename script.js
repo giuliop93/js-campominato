@@ -18,7 +18,7 @@
 
         //finchè la length dei numeri inseriti è minore della length massima di numeri che l'utente può inserire,
         // continuo a chiedere all'utente di inserire un numero tramite prompt
-        while (userNumbers.length <= userLengthMax) {
+        while (userNumbers.length <= userLengthMax && !gameOver) {
             var userInput = prompt("inserisci un numero tra " + aiNumber + " e " + maxNumber + ".("));
 
             //se il valore inserito è valido, ritorna TRUE
