@@ -13,23 +13,23 @@
     //la seguente funzione chiede all'utente di inserire un numero, tramite prompt, x volte, dove x è la differenza tra il valore "maxNumber" e "aiNumbersLength".
     // controllare che il numero inserito sia un numero valido e che noon sia ancora stato usato. Deve anche controllare che il numero non esista all'interno dell'array "aiNumbers"
 
-    function askUserNumbers(){
-        var userlengthMax = maxNumber - aiNumbersLength;
+    function askUserNumbers() {
+        var userlengthMax = maxNumber - aiNumber - aiNumbersLength;
 
         //finchè la length dei numeri inseriti è minore della length massima di numeri che l'utente può inserire,
         // continuo a chiedere all'utente di inserire un numero tramite prompt
-        while (userNumbers.length < userLengthMax) {
+        while (userNumbers.length <= userLengthMax) {
             var userInput = prompt("inserisci un numero tra " + aiNumber + " e " + maxNumber + ".("));
-            
-//se il valore inserito è valido, ritorna TRUE
-// se il valore NON è valido e l'utente deve inserirlo, ritorna FALSE
-// se il valore non è valido perchè è una mina, ritorna "game over"
+
+            //se il valore inserito è valido, ritorna TRUE
+            // se il valore NON è valido e l'utente deve inserirlo, ritorna FALSE
+            // se il valore non è valido perchè è una mina, ritorna "game over"
 
             var inputIsValid = checkUserInput(userInput)
 
-            if (!inputIsValid || inputIsValid !== "game over"){
+            if (!inputIsValid || inputIsValid !== "game over") {
                 alert("numero inserito non valido");
-            } else if (inputIsValid === "game over"){
+            } else if (inputIsValid === "game over") {
                 gameOver = true;
 
                 alert("hai perso dopo aver inserito" + userNumbers.lenght + "numeri.")
@@ -37,7 +37,8 @@
                 userNumbers.push(parseInt(userInput));
             }
 
-            if (userNumbers.length === userLengthMax){
+            if (userNumbers.length === userLengthMax) {
+                gameOver = true
                 alert("hai vinto!")
             }
         }
@@ -45,30 +46,30 @@
         //la seguente funzione deve controllare se:
         - il valore è un numero Reale, non è minore di minNumber, non è maggiore di maxNUmber e non sia già stato usato dall'utente
 
-        function checkUserInput(inputValue){
+        function checkUserInput(inputValue) {
             var result = true
             var numberToCheck = parseint(inputValue)
 
-            if(isNaN(numberToCheck)){
+            if (isNaN(numberToCheck)) {
                 return false;
             }
 
-            if(numberToCheck < minNumber || numberToCheck > maxNumber){
+            if (numberToCheck < minNumber || numberToCheck > maxNumber) {
                 return false;
             }
 
-            if(userNumbers.indexOf(numberToCheck) > -1){
+            if (userNumbers.indexOf(numberToCheck) > -1) {
                 return false;
             }
 
             return result
         }
 
-        for (var i = 0; i < userlengthMax; i++){
-            if(numeroIsDoppio){
-                i-- 
+        for (var i = 0; i < userlengthMax; i++) {
+            if (numeroIsDoppio) {
+                i--
                 alert("numero non valido")
-            } else{
+            } else {
                 push
             }
         }
