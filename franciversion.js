@@ -2,6 +2,8 @@
 // i numeri non possono essere duplicati
 var bombe = [];
 var numerInseriti = [];
+var NUMERO_MASSIMO = 100;
+var NUMERO_BOMBE = 1;
 
 while(bombe.length < 16){
     var numeroGenerato = Math.floor(Math.random()) * 100) + 1;
@@ -11,7 +13,7 @@ while(bombe.length < 16){
     }
 }
 
-console.log(bombe);
+console.log("bombe generate", bombe);
 
 var bombaTrovata = false;
 
