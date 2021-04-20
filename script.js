@@ -1,7 +1,7 @@
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 (function () {
     function generateRandomNumbers(min, max) {
-        return Math.floor(Math.random() * max) + min
+        return Math.floor(Math.random() * (max - min)) + min
     }
 
     var minNumber = 1;
@@ -19,7 +19,7 @@
         //finchè la length dei numeri inseriti è minore della length massima di numeri che l'utente può inserire,
         // continuo a chiedere all'utente di inserire un numero tramite prompt
         while (userNumbers.length < userLengthMax) {
-            var userInput = prompt("inserisci un numero tra " + aiNumber + " e " + maxNumber + ".");
+            var userInput = prompt("inserisci un numero tra " + aiNumber + " e " + maxNumber + ".("));
             
 //se il valore inserito è valido, ritorna TRUE
 // se il valore NON è valido e l'utente deve inserirlo, ritorna FALSE
