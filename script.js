@@ -78,7 +78,7 @@
     //la seguente funziona crea i numeri iniziali del computer e si assicura che i numeri non siano doppi
 
     function createAiNumbers() {
-        do {
+        while {
             var numeroRandom = generateRandomNumbers(minNumber, maxNumber);
 
             if (aiNumbers.indexOf(numeroRandom) === -1) {
